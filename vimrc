@@ -6,6 +6,7 @@ set number
 set colorcolumn=90
 set hidden
 set history=100
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 filetype indent on
 set nowrap
