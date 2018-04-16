@@ -5,8 +5,9 @@ execute pathogen#infect()
 filetype on
 filetype plugin on
 syntax on
-set colorcolumn=90
+"set colorcolumn=90
 set number
+set lbr
 
 " keep more info in memory to speed things up
 set hidden
@@ -23,6 +24,10 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " autoremove whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+set wildmenu
+set wildmode=list:longest,full
+set mouse=a
 
 " better indenting
 filetype indent on
@@ -55,3 +60,16 @@ set signcolumn=yes
 
 " Command-T: reindex files
 noremap <Leader>r :CommandTFlush<CR>
+
+"ctags
+
+" ctrl+\ open definition in a new tab
+"map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
+" alt+] open definition in a vertical split
+"map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+let g:airline_theme='minimalist'
+
+set clipboard=unnamed
+vnoremap <C-c> "+y
